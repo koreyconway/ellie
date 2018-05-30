@@ -10,9 +10,6 @@ defmodule Ellie do
       merge_config :ellie, EllieWeb.Endpoint,
         secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
         url: [host: url_host()]
-
-      merge_config :ellie, Ellie.Repo,
-        url: System.get_env("DATABASE_URL")
     end
 
     children = [
